@@ -1,0 +1,44 @@
+---
+title: "Interactive Iris Explorer"
+author: "Jared Smith"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Slide 1: Title
+
+# Interactive Iris Explorer  
+### A Shiny App for Visualizing the Famous Iris Dataset  
+
+---
+
+## Slide 2: The Problem
+
+- The **iris dataset** is one of the most famous in statistics and machine learning.  
+- New learners need a **simple way** to explore how features relate to species.  
+- Static plots don’t allow interactivity or filtering.  
+
+---
+
+## Slide 3: The Solution
+
+- I built a **Shiny App** called *Iris Explorer*.  
+- Features:  
+  - Interactive slider for filtering by **Sepal Length**  
+  - Scatterplot of **Sepal Length vs Sepal Width**  
+  - Dynamic color by species  
+  - Table preview of filtered rows  
+- Designed for learners and data enthusiasts.  
+
+---
+
+## Slide 4: Demo Snapshot
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 3, alpha = 0.7) +
+  theme_minimal() +
+  labs(title = "Sepal Length vs Width (Iris Dataset)")
